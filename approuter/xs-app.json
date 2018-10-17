@@ -1,0 +1,16 @@
+{
+    "welcomeFile": "index.html",
+    "routes":[{
+        "source": "^/api/(.*)",
+        "target": "/api/$1",
+        "destination": "app-destination"
+    },{
+        "source": "^/odata/v2/BalanceService/(.*)",
+        "target": "/odata/v2/BalanceService/$1",
+        "destination": "app-destination"
+    },{
+        "source": "^/odata/v2/BalanceService",
+        "target": "/odata/v2/BalanceService",
+        "destination": "app-destination"
+    }]
+}

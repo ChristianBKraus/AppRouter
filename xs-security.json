@@ -1,0 +1,31 @@
+{
+    "xsappname": "Balance-srv",
+    "tenant-mode": "shared",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.Withdraw",
+            "description": "Scope to withdraw from account"
+        },
+        {
+            "name": "$XSAPPNAME.Issue",
+            "description": "Scope to issue credit to account"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "AccountUser",
+            "description": "Role to withdraw from Account",
+            "scope-references": [
+                "$XSAPPNAME.Withdraw"
+            ]
+        },
+        {
+            "name": "AccountManager",
+            "description": "Role to also post credit to account",
+            "scope-references": [
+                "$XSAPPNAME.Withdraw",
+                "$XSAPPNAME.Issue"
+            ]
+        }
+    ]
+}
